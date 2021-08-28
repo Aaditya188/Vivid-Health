@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{{ title }}</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="static/assets/img/favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/assets/img/favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="static/assets/img/favicons/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="static/assets/img/favicons/favicon.ico">
+  <link rel="manifest" href="static/assets/img/favicons/manifest.json">
+  <meta name="msapplication-TileImage" content="static/assets/img/favicons/favicon.ico">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="static/vendor/bootstrap/static/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="static/fonts/font-awesome-4.7.0/static/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="static/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="static/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="static/css/util.css">
+	<link rel="stylesheet" href="static/css/mainmedical.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="contact1">
+		<div class="container-contact1">
+			<div id="pneumoniadisease">
+				<h1>Pneumonia </h1>
+				<p>
+				Pneumonia is an inflammatory condition of the lung affecting primarily the small air sacs known as alveoli. Symptoms typically include some combination of productive or dry cough, chest pain, fever and difficulty breathing. The severity of the condition is variable.
+			 <br><br>Chest X-ray images (anterior-posterior) were selected from retrospective cohorts of pediatric patients of one to five years old from Guangzhou Women and Children’s Medical Center, Guangzhou. All chest X-ray imaging was performed as part of patients’ routine clinical care. For the analysis of chest x-ray images, all chest radiographs were initially screened for quality control by removing all low quality or unreadable scans. The diagnoses for the images were then graded by two expert physicians before being cleared for training the AI system. In order to account for any grading errors, the evaluation set was also checked by a third expert. There are 5,863 X-Ray images (JPEG) and 2 categories (Pneumonia/Normal).
+				<br>Data Source: <a href="https://data.mendeley.com/datasets/rscbjbr9sj/2">Pneumonia Dataset</a></p><br>
+				
+			<h6>Sample Input Image</h6>
+				<img style="max-width: 250px" src="/static/xray1.jpeg"/ class="one">
+			</div><br>    
+			<div style="color:black; text-align: center">
+					<form action="{{ url_for('pneumoniadisease')}}" method="POST" enctype="multipart/form-data" style="margin-top: 30px; width: 80%; text-align: center; margin: auto">
+						<h1>Pneumonia Disease Image Classifier</h1><br>
+				<div class="alert">
+				  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+				  <strong>Info!</strong> Upload your Chest X-Ray images only, to detect the presence of Pneumonia.
+				</div>
+					<input type="file" name="file" class="form-control-file" id="inputfile" onchange="preview_image(event)" style="font-weight: bold;" required="required">
+		
+					<img id="output-image" class="rounded mx-auto d-block"src="{{ url_for('send_file', filename=file_name)}}" onerror="this.src='/static/default.png'" style ="max-width: 500px; max-height: 450px; margin-top: 30px; margin-bottom: 10px" />
+					  <p style="font-style: italic">{{ file_name }}</p>
+				<br><button id="sub" type="submit ">Predict</button>
+				</form>
+				<br>
+			  </div>
+		</div>
+	</div>
+<!--===============================================================================================-->
+	<script src="static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/bootstrap/js/popper.js"></script>
+	<script src="static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+	  <style>
+    	.bg-img {
+          /* The image used */
+          background-image: url("/static/pneumonia.gif");
+
+          min-height: 400px;
+
+          /* Center and scale the image nicely */
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+
+          /* Needed to position the navbar */
+          position: relative;
+        }
+
+        /* Position the navbar container inside the image */
+        .container {
+          position: absolute;
+          margin: 20px;
+          width: auto;
+        }
+
+        /* The navbar */
+        .topnav {
+          overflow: hidden;
+          background-color: #29AB87;
+        }
+
+        /* Navbar links */
+        .topnav a {
+          float: left;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 18px;
+        }
+
+        .topnav a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+
+        .centered {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+          }
+         
+        button {
+          background-color: #29AB87;
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+
+        section { display: block; }
+
+        .img_holder img{
+        max-width: 100%; max-height: 100%;
+    	}
+
+        .navbar{ 
+            background-color:#008081;
+        }
+        
+        #pneumoniadisease {
+          padding: 20px;
+          border-spacing: 15px;
+          text-align: justify;
+          border-bottom-left-radius: 25px;
+          border-bottom-right-radius: 25px;
+        }
+
+        .alert {
+          padding: 16px;
+          background-color: #57bac9;
+          color: white;
+        }
+
+        .closebtn {
+          margin-left: 15px;
+          color: white;
+          font-weight: bold;
+          float: right;
+          font-size: 25px;
+          line-height: 20px;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+
+        .closebtn:hover {
+          color: black;
+        }
+	   
+	.one{
+            padding: 0px 10px;
+            display: inline-block;
+            margin: 4px 2px;
+        }
+    </style>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript">
+    function preview_image(event) {
+      var reader = new FileReader();
+      reader.onload = function () {
+        var output = document.getElementById('output-image')
+        output.src = reader.result;
+      }
+      reader.readAsDataURL(event.target.files[0]);
+      }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<!--===============================================================================================-->
+	<script src="static/js/main.js"></script>
+
+</body>
+</html>

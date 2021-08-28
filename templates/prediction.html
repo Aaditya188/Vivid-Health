@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="static/assets/img/favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/assets/img/favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="static/assets/img/favicons/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="static/assets/img/favicons/favicon.ico">
+  <meta name="msapplication-TileImage" content="static/assets/img/favicons/favicon.ico">
+
+</head>
+<style>
+  @font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_GbQbMZhKg.ttf) format('truetype');
+}
+body {
+  width: 100wh;
+  height: 90vh;
+  color: #fff;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+}
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-weight: 900;
+  font-size: 50px;
+  text-align: center;
+  position: relative;
+  top: 20%;
+  right: 0;
+  left: 0;
+  letter-spacing: 12px;
+  -webkit-animation: slideIn 1s ease forwards;
+  animation: slideIn 1s ease forwards;
+}
+hr {
+  display: block;
+  top: 12%;
+  position: relative;
+  width: 10%;
+  height: 1px;
+  border: none;
+  background-color: #ececec;
+}
+.line-1 {
+  font-family: 'Josefin Sans', sans-serif;
+  position: relative;
+  display: in-line;
+  width: 11.8em;
+  margin: 60px auto;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  font-size: 180%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+.anim-typewriter {
+  animation: typewriter 4s steps(44) 1s 1 normal both, blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 20.0em;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+@-webkit-keyframes slideIn {
+  0% {
+    -webkit-transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideIn {
+  0% {
+    -webkit-transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    opacity: 1;
+  }
+}
+</style>
+<body>
+<!-- partial:index.partial.html -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300" type="text/css" />
+<div>
+<h1>{{ greet }}</h1>
+<hr>
+<p class="line-1 anim-typewriter">{{ prediction_text }}</p>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+<script>
+  var $paragraph =  $("p");
+
+$(window).scroll(function () {
+    $paragraph.each(function () {
+        paragraphMiddle = $(this).offset().top + (0.5 *$(this).height());
+        windowBottom = $(window).scrollTop() + $(window).height();
+        
+        if (paragraphMiddle < windowBottom) {
+          $(this).addClass("paraFadeIn");
+        }
+    });
+});
+
+/* On Load: Trigger Scroll Once*/
+$(window).scroll();
+</script>
+</html>

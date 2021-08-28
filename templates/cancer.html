@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{{ title }}</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="apple-touch-icon" sizes="180x180" href="static/assets/img/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/assets/img/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/assets/img/favicons/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="static/assets/img/favicons/favicon.ico">
+    <link rel="manifest" href="static/assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="static/assets/img/favicons/favicon.ico">
+
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="static/vendor/bootstrap/static/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="static/fonts/font-awesome-4.7.0/static/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="static/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="static/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="static/css/util.css">
+	<link rel="stylesheet" href="static/css/mainmedical.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="contact1">
+		<div class="container-contact1">
+
+			<form action="{{ url_for('breastcancer')}}" method="POST">    
+            
+				<div class="wrap-input1 validate-input">
+				<label for="first"><strong>Texture Mean - standard deviation of gray-scale values</strong></label> <input class="input1" id="first" name="texture_mean" type="number" step="any" required="required" style="font-weight:bold"></div>
+			  
+				<div class="wrap-input1 validate-input">
+				<label for="second"><strong>Perimeter Mean - Mean size of the core tumor</strong></label> <input class="input1" id="second" name="perimeter_mean" type="number" step="any" required="required" style="font-weight:bold"></div>
+			  
+				<div class="wrap-input1 validate-input">
+				<label for="third"><strong>Smoothness Mean - Mean of local variation in radius lengths</strong></label> <input class="input1" id="third" name="smoothness_mean" type="number"  step="any" required="required" style="font-weight:bold"></div>
+			  
+				<div class="wrap-input1 validate-input">
+				<label for="fourth"><strong>Compactness Mean</strong></label> <input class="input1" id="fourth" name="compactness_mean" type="number"  step="any" required="required" style="font-weight:bold"></div>
+			  
+				<div class="wrap-input1 validate-input">
+				<label for="fifth"><strong>Concavity Mean - Mean of severity of concave portions of the contour</strong></label> <input class="input1" id="fifth" name="concavity_mean" type="number"  step="any" required="required" style="font-weight:bold"></div>
+			  
+				<div class="wrap-input1 validate-input">
+				<label for="sixth"><strong>Concave Points Mean - Mean for number of concave portions of the contour</strong></label> <input class="input1" id="sixth" name="concave_points_mean" type="number"  step="any" required="required" style="font-weight:bold"></div>
+			  
+				<div class="wrap-input1 validate-input">
+				<label for="seventh"><strong>Symmetry Mean</strong></label> <input class="input1" id="seventh" name="symmetry_mean" type="number"  step="any" required="required" style="font-weight:bold"></div>
+			  
+				<div class="wrap-input1 validate-input">
+				<label for="eighth"><strong>Radius Se - Standard error for the mean of distances from center to points on the perimeter</strong></label> <input class="input1" name="radius_se" id="eighth" type="number"  step="any" required="required" style="font-weight:bold"></div>
+			  
+				<div class="wrap-input1 validate-input">
+				<label for="ninth"><strong>Compactness Se - Standard error for perimeter² / area — 1.0</strong></label> <input class="input1" id="ninth" name="compactness_se" type="number"  step="any" required="required" style="font-weight:bold"></div>
+			  
+				<div class="wrap-input1 validate-input">
+				<label for="tenth"><strong>Concavity Se - Standard error for severity of concave portions of the contour</strong></label> <input class="input1" id="tenth" name="concavity_se" type="number"  step="any" required="required" style="font-weight:bold"></div>
+			  
+				<div class="wrap-input1 validate-input">
+				<label for="eleventh"><strong>Concave Points Se - Standard error for number of concave portions of the contour</strong></label> <input class="input1" name="concave_points_se" id="eleventh" type="number"  step="any" required="required" style="font-weight:bold"></div>
+			  
+				<div class="wrap-input1 validate-input">
+				<label for="twelfth"><strong>Texture Worst - “worst” or largest mean value for standard deviation of gray-scale values</strong></label> <input class="input1" name="texture_worst" id="twelfth" type="number"  step="any" required="required" style="font-weight:bold"></div>
+			  
+				<div class="wrap-input1 validate-input">
+				<label for="thirteenth"><strong>Smoothness Worst - “worst” or largest mean value for local variation in radius lengths</strong></label> <input class="input1" name="smoothness_worst" id="thirteenth" type="number"  step="any" required="required" style="font-weight:bold"></div>
+			  
+				<div class="wrap-input1 validate-input">
+				<label for="fourteenth"><strong>Compactness Worst - “worst” or largest mean value for perimeter² / area — 1.0</strong></label> <input class="input1" name="compactness_worst" id="fourteenth" type="number"  step="any" required="required" style="font-weight:bold"></div>
+			  
+				<div class="wrap-input1 validate-input">
+				<label for="fifteenth"><strong>Concavity Worst - “worst” or largest mean value for severity of concave portions of the contour</strong></label> <input class="input1" name="concavity_worst" id="fifteenth" type="number"  step="any" required="required" style="font-weight:bold"></div>
+			  
+				<div class="wrap-input1 validate-input">
+				<label for="sixteenth"><strong>Concave Points Worst - “worst” or largest mean value for number of concave portions of the contour</strong></label> <input class="input1" name="concave_points_worst" id="sixteenth" type="number" step="any" required="required" style="font-weight:bold"></div>
+			  
+				<div class="wrap-input1 validate-input">
+				<label for="seventeenth"><strong>Symmetry Worst</strong></label> <input class="input1" name="symmetry_worst" id="seventeenth" type="number"  step="any" required="required" style="font-weight:bold"></div>
+			  
+				<div class="wrap-input1 validate-input">
+				<label for="eighteenth"><strong>Fractal Dimension Worst - “worst” or largest mean value for “coastline approximation” — 1</strong></label> <input class="input1" name="fractal_dimension_worst" id="eighteenth"  type="number"  step="any" required="required" style="font-weight:bold"></div>
+			  
+				<br><br><button class="btn btn-success" id="sub" type="submit">Predict</button>
+			  </form>
+		</div>
+	</div>
+<!--===============================================================================================-->
+	<script src="static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/bootstrap/js/popper.js"></script>
+	<script src="static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="static/js/main.js"></script>
+
+</body>
+</html>

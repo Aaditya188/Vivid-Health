@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{{ title }}</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="apple-touch-icon" sizes="180x180" href="static/assets/img/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/assets/img/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/assets/img/favicons/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="static/assets/img/favicons/favicon.ico">
+    <link rel="manifest" href="static/assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="static/assets/img/favicons/favicon.ico">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="static/vendor/bootstrap/static/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="static/fonts/font-awesome-4.7.0/static/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="static/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="static/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="static/css/util.css">
+	<link rel="stylesheet" href="static/css/mainmedical.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="contact1">
+		<div class="container-contact1">
+
+			<form action="{{ url_for('liverdisease')}}" method="POST">
+				<div class="wrap-input1 validate-input">     
+				<label for="first"><strong>Age</strong></label> <input class="input1" id="first" name="Age" type="number"  required="required" style="font-weight: bold"></div>
+	
+				<div class="wrap-input1 validate-input">
+				<label for="second"><strong>Gender</strong></label>
+				<select class="input1" name = 'Gender' style="font-weight: bold" required>
+				 <option value="0">Female</option>
+				 <option value="1">Male</option></select></div>
+	
+				<div class="wrap-input1 validate-input">
+				<label for="third"><strong>Total Bilirubin</strong></label> <input class="input1" id="third" name="Total_Bilirubin" type="number" required="required" style="font-weight: bold"></div>
+	
+				<div class="wrap-input1 validate-input">
+				<label for="fourth"><strong>Direct Bilirubin</strong></label> <input class="input1" id="fourth" name="Direct_Bilirubin" type="number" required="required" style="font-weight: bold"></div>
+	
+				<div class="wrap-input1 validate-input">
+				<label for="fifth"><strong>Alkaline Phosphotase</strong></label> <input class="input1" id="fifth" name="Alkaline_Phosphotase" type="number" step="any" required="required" style="font-weight: bold"></div>
+	
+				<div class="wrap-input1 validate-input">
+				<label for="sixth"><strong>Alamine Aminotransferase</strong></label> <input class="input1" id="sixth" name="Alamine_Aminotransferase" type="number" step="any" required="required" style="font-weight: bold"></div>
+	
+				<div class="wrap-input1 validate-input">
+				<label for="seventh"><strong>Aspartate Aminotransferase</strong></label> <input class="input1" id="seventh" name="Aspartate_Aminotransferase" type="number" step="any" required="required" style="font-weight: bold"></div>
+	
+				<div class="wrap-input1 validate-input">
+				<label for="eighth"><strong>Total Protiens</strong></label> <input class="input1" name="Total_Protiens" id="eighth" type="number" step="any" required="required" style="font-weight: bold"></div>
+	
+				<div class="wrap-input1 validate-input">
+				<label for="ninth"><strong>Albumin</strong></label> <input class="input1" id="ninth" name="Albumin" type="number" step="any" required="required" style="font-weight: bold"></div>
+	
+				<div class="wrap-input1 validate-input">
+				<label for="tenth"><strong>Albumin and Globulin Ratio</strong></label> <input class="input1" id="tenth" name="Albumin_and_Globulin_Ratio" type="number" step="any" required="required" style="font-weight: bold"></div>
+	
+				<br><br><button class="btn btn-success" id="sub" type="submit ">Predict</button>
+				</div>
+			</form>
+		</div>
+	</div>
+<!--===============================================================================================-->
+	<script src="static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/bootstrap/js/popper.js"></script>
+	<script src="static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="static/js/main.js"></script>
+
+</body>
+</html>
