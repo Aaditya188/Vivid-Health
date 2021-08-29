@@ -1,7 +1,7 @@
 # Healthcare ML Web Application
   
 Access to quality healthcare and doctors has always been a concern in developing countries and remote areas. To deal with such issues, this healthcare web application is developed. Healthcare data was fed to machine learning training models and engines for predictive modelling. The accuracy of these models is directly proportional to the training they get. These models will be able to predict the potential health risks to a patient a lot earlier so that they could take the preventive measures and live a long healthy life.<br />
-This healthcare web application can be accessed by the given link- https://healthcare-web-application.herokuapp.com/
+This healthcare web application can be accessed by the given link- https://vividhealth.herokuapp.com/
 
 ## Heart Disease
 A disease is an unnatural medical condition that negatively affects the functional state of an organism and is generally associated with certain signs of illness. As reported by World Health Organization (WHO), Heart Disease and Stroke are the world’s biggest killers and have remained the leading causes of death globally in the last 15 years. In the direction of predicting heart disease, Machine Learning can present remarkable features that simplify the identification of unseen patterns, eventually providing clinical insights that assist physicians in planning and providing care.<br />
